@@ -1,7 +1,7 @@
-# GCStats
-[![Build Status](https://travis-ci.org/bripkens/node-gcstats.svg?branch=master)](https://travis-ci.org/bripkens/node-gcstats)
+<h1 align="center">gcstats</h1>
+<p align="center">Exposes stats about V8 GC after it has been executed.</p>
 
-Exposes stats about V8 GC after it has been executed.
+[![Build Status](https://travis-ci.org/bripkens/node-gcstats.svg?branch=master)](https://travis-ci.org/bripkens/node-gcstats)
 
 ## Usage
 
