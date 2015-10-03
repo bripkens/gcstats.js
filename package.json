@@ -5,7 +5,7 @@
   "main": "src/gcstats.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bripkens/node-gcstats.git"
+    "url": "https://github.com/bripkens/gcstats.js.git"
   },
   "author": "Ben Ripkens <bripkens.dev@gmail.com>",
   "license": "MIT",
