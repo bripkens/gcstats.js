@@ -8,7 +8,7 @@ Exposes stats about V8 GC after it has been executed.
 Create a new instance of the module and subscribe to `stats`-events from that:
 
 ```javascript
-var gcStats = require('gc-stats');
+var gcStats = require('gcstats');
 
 gcStats.on('stats', function(stats) {
   console.log('GC happened', stats);
@@ -51,7 +51,7 @@ gctype can have the following values:
 ## Installation
 
 ```
-npm install --save gc-stats
+npm install --save gcstats
 ```
 
 ## Node version compatibility
