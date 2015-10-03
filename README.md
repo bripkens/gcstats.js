@@ -32,11 +32,6 @@ GC happened {
     totalHeapExecutableSize: 4194304,
     usedHeapSize: 8116600,
     heapSizeLimit: 1535115264
-  }, diff: {
-    totalHeapSize: 0,
-    totalHeapExecutableSize: 0,
-    usedHeapSize: -4105896,
-    heapSizeLimit: 0
   }
 }
 ```

@@ -49,20 +49,6 @@ static void formatStats(Local<Object> obj, HeapInfo* info) {
   #endif
 }
 
-static void formatStatDiff(Local<Object> obj, HeapInfo* before, HeapInfo* after) {
-  Nan::Set(obj, Nan::New("totalHeapSize").ToLocalChecked(), Nan::New<Number>(
-    static_cast<double>(after->totalHeapSize) - static_cast<double>(before->totalHeapSize)));
-  Nan::Set(obj, Nan::New("totalHeapExecutableSize").ToLocalChecked(), Nan::New<Number>(
-    static_cast<double>(after->totalHeapExecutableSize) - static_cast<double>(before->totalHeapExecutableSize)));
-  Nan::Set(obj, Nan::New("usedHeapSize").ToLocalChecked(), Nan::New<Number>(
-    static_cast<double>(after->usedHeapSize) - static_cast<double>(before->usedHeapSize)));
-  Nan::Set(obj, Nan::New("heapSizeLimit").ToLocalChecked(), Nan::New<Number>(
-    static_cast<double>(after->heapSizeLimit) - static_cast<double>(before->heapSizeLimit)));
-  #if NODE_MODULE_VERSION >= NODE_0_12_MODULE_VERSION
-  Nan::Set(obj, Nan::New("totalPhysicalSize").ToLocalChecked(), Nan::New<Number>(
-    static_cast<double>(after->totalPhysicalSize) - static_cast<double>(before->totalPhysicalSize)));
-  #endif
-}
 
 static void asyncAfter(uv_work_t* work, int status) {
   Nan::HandleScope scope;
@@ -76,9 +62,6 @@ static void asyncAfter(uv_work_t* work, int status) {
   formatStats(beforeGCStats, data->before);
   formatStats(afterGCStats, data->after);
 
-  Local<Object> diffStats = Nan::New<Object>();
-  formatStatDiff(diffStats, data->before, data->after);
-
   Nan::Set(obj, Nan::New("pause").ToLocalChecked(),
     Nan::New<Number>(static_cast<double>(data->gcEndTime - data->gcStartTime)));
   Nan::Set(obj, Nan::New("pauseMS").ToLocalChecked(),
@@ -86,7 +69,6 @@ static void asyncAfter(uv_work_t* work, int status) {
   Nan::Set(obj, Nan::New("gctype").ToLocalChecked(), Nan::New<Number>(gctype));
   Nan::Set(obj, Nan::New("before").ToLocalChecked(), beforeGCStats);
   Nan::Set(obj, Nan::New("after").ToLocalChecked(), afterGCStats);
-  Nan::Set(obj, Nan::New("diff").ToLocalChecked(), diffStats);
 
   Local<Value> arguments[] = {obj};
 
