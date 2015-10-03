@@ -141,8 +141,8 @@ NAN_MODULE_INIT(init) {
 
   Nan::Set(target,
     Nan::New("afterGC").ToLocalChecked(),
-    Nan::GetFunction(
-      Nan::New<FunctionTemplate>(AfterGC)).ToLocalChecked());
+    Nan::GetFunction(Nan::New<FunctionTemplate>(AfterGC)).ToLocalChecked()
+  );
 }
 
 NODE_MODULE(gcstats, init)
