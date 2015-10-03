@@ -1,4 +1,4 @@
-# Build Status
+# Compatibility
  - v0.10.40: ✅
  - v0.11.16: ✅
  - v0.12.7: ✅
