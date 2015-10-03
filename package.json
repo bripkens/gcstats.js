@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Exposes node v8 garbage collection stats",
   "main": "src/gcstats.js",
-  "repository": "git@github.com:dainis/node-gcstats.git",
-  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bripkens/node-gcstats.git"
+  },
+  "author": "Ben Ripkens <bripkens.dev@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "install": "node-gyp rebuild",
     "rebuild": "node-gyp rebuild",
