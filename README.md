@@ -8,7 +8,7 @@
 Create a new instance of the module and subscribe to `stats`-events from that:
 
 ```javascript
-var gcStats = require('gcstats');
+var gcStats = require('gcstats.js');
 
 gcStats.on('stats', function(stats) {
   console.log('GC happened', stats);
@@ -51,7 +51,7 @@ gctype can have the following values:
 ## Installation
 
 ```
-npm install --save gcstats
+npm install --save gcstats.js
 ```
 
 ## Node version compatibility
