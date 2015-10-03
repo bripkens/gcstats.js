@@ -7,7 +7,8 @@
   "license": "Unlicense",
   "scripts": {
     "install": "node-gyp rebuild",
-    "rebuild": "node-gyp rebuild"
+    "rebuild": "node-gyp rebuild",
+    "test": "./test"
   },
   "dependencies": {
     "nan": "^2.0.5"
