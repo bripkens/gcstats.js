@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 
+output_file="compatibility.md"
+
 # make NVM available in this test script
 . "$HOME/.nvm/nvm.sh"
 
-# set -eo pipefail
-
-echo "Build Status" > build_status
+echo "# Compatibility" > "$output_file"
 
 test() {
   echo "Testing with $1"
   nvm install $1
   nvm use $1
 
+  rm -rf build
   rm -rf "$HOME/.node-gyp"
   rm -rf node_modules
 
   npm install
 
   if [[ $? == 0 ]]; then
-    echo "$1: ✅" >> build_status
+    echo " - $1: ✅" >> "$output_file"
   else
-    echo "$1: ❌" >> build_status
+    echo " - $1: ❌" >> "$output_file"
   fi
 }
 
