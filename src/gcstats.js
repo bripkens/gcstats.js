@@ -1,6 +1,6 @@
 var gcEmitter,
 	util = require('util'),
-	gcstats = require('./build/Release/gcstats'),
+	gcstats = require('../build/Release/gcstats'),
 	EventEmitter = require('events').EventEmitter;
 
 function GCStats() {

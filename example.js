@@ -1,16 +1,22 @@
-var stats = new (require('./index'))();
+var GCStats = require('.');
 
-stats.on('stats', function(stats) {
-	console.log(stats);
+var gcstats = new GCStats();
+gcstats.on('stats', function(stats) {
+  console.log('GC happened', stats);
 });
 
 var t = [];
 
 setInterval(function(){
-	t.push(new Date());
-	t.push(new Date());
-}, 1000);
+	for (var i = 0; i < 100; i++) {
+		t.push(new Date());
+		t.push(new Date());
+	}
+}, 100);
 
-setInterval(function() {
-	t.pop();
-});
+
+setInterval(function(){
+	for (var i = 0; i < 3; i++) {
+		t.pop();
+	}
+}, 100);
