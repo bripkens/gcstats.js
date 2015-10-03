@@ -62,13 +62,31 @@ static void asyncAfter(uv_work_t* work, int status) {
   formatStats(beforeGCStats, data->before);
   formatStats(afterGCStats, data->after);
 
-  Nan::Set(obj, Nan::New("pause").ToLocalChecked(),
-    Nan::New<Number>(static_cast<double>(data->gcEndTime - data->gcStartTime)));
-  Nan::Set(obj, Nan::New("pauseMS").ToLocalChecked(),
-    Nan::New<Number>(static_cast<double>((data->gcEndTime - data->gcStartTime) / 1000000)));
-  Nan::Set(obj, Nan::New("gctype").ToLocalChecked(), Nan::New<Number>(gctype));
-  Nan::Set(obj, Nan::New("before").ToLocalChecked(), beforeGCStats);
-  Nan::Set(obj, Nan::New("after").ToLocalChecked(), afterGCStats);
+  Nan::Set(
+    obj,
+    Nan::New("start").ToLocalChecked(),
+    Nan::New<Number>(static_cast<double>(data->gcStartTime))
+  );
+  Nan::Set(
+    obj,
+    Nan::New("end").ToLocalChecked(),
+    Nan::New<Number>(static_cast<double>(data->gcEndTime))
+  );
+  Nan::Set(
+    obj,
+    Nan::New("gctype").ToLocalChecked(),
+    Nan::New<Number>(gctype)
+  );
+  Nan::Set(
+    obj,
+    Nan::New("before").ToLocalChecked(),
+    beforeGCStats
+  );
+  Nan::Set(
+    obj,
+    Nan::New("after").ToLocalChecked(),
+    afterGCStats
+  );
 
   Local<Value> arguments[] = {obj};
 
@@ -92,7 +110,6 @@ NAN_GC_CALLBACK(afterGC) {
   data->after = new HeapInfo;
   gctype = type;
   HeapStatistics stats;
-
 
   Nan::GetHeapStatistics(&stats);
 

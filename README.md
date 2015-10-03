@@ -15,25 +15,24 @@ gcStats.on('stats', function(stats) {
 });
 ```
 
-This will print blobs like this whenever a GC happened:
+This will print blobs like this whenever a GC happens:
 
 ```
-GC happened {
-  pause: 433034,
-  pauseMS: 0,
+GC happened { start: 635817864674795,
+  end: 635817865774643,
   gctype: 1,
-  before: {
-    totalHeapSize: 18635008,
-    totalHeapExecutableSize: 4194304,
-    usedHeapSize: 12222496,
-    heapSizeLimit: 1535115264
-  }, after: {
-    totalHeapSize: 18635008,
-    totalHeapExecutableSize: 4194304,
-    usedHeapSize: 8116600,
-    heapSizeLimit: 1535115264
-  }
-}
+  before:
+   { totalHeapSize: 277510912,
+     totalHeapExecutableSize: 5242880,
+     usedHeapSize: 273621856,
+     heapSizeLimit: 1535115264,
+     totalPhysicalSize: 277510912 },
+  after:
+   { totalHeapSize: 277510912,
+     totalHeapExecutableSize: 5242880,
+     usedHeapSize: 273533760,
+     heapSizeLimit: 1535115264,
+     totalPhysicalSize: 277510912 } }
 ```
 
 ## Property insights
@@ -43,8 +42,6 @@ GC happened {
  * heapSizeLimit: The absolute limit the heap cannot exceed
  * totalPhysicalSize: Commited size (node 0.11+)
  * pause: Nanoseconds from start to end of GC using hrtime()
- * pause: Nanoseconds from start to end of GC using hrtime()
- * pauseMS: pause expressed in milliseconds
 
 gctype can have the following values:
  * 1: Scavenge (minor GC)
@@ -57,5 +54,5 @@ gctype can have the following values:
 npm install --save gc-stats
 ```
 
-## Node version support
-node-gcstats depends on C++ extensions which are compiled when the *gc-stats* module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/dainis/node-gcstats/).
+## Node version compatibility
+node-gcstats depends on C++ extensions which are compiled when the *gc-stats* module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/dainis/node-gcstats/) and the [compatibility file](https://github.com/bripkens/node-gcstats/blob/develop/compatibility.md).
