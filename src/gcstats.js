@@ -1,21 +1,6 @@
-var gcEmitter,
-	util = require('util'),
-	gcstats = require('../build/Release/gcstats'),
-	EventEmitter = require('events').EventEmitter;
+var gcStats = require('../build/Release/gcstats');
+var EventEmitter = require('events').EventEmitter;
 
-function GCStats() {
-	if(!gcEmitter) {
-		gcEmitter = new EventEmitter();
-		gcstats.afterGC(function(stats) {
-			gcEmitter.emit('data', stats);
-		});
-	}
+var emitter = module.exports = new EventEmitter();
 
-	EventEmitter.call(this);
-
-	gcEmitter.on('data', this.emit.bind(this, 'stats'));
-}
-
-util.inherits(GCStats, EventEmitter);
-
-module.exports = GCStats;
+gcStats.afterGC(emitter.emit.bind(emitter, 'stats'));

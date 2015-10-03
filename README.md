@@ -8,10 +8,9 @@ Exposes stats about V8 GC after it has been executed.
 Create a new instance of the module and subscribe to `stats`-events from that:
 
 ```javascript
-var GCStats = require('gc-stats');
+var gcStats = require('gc-stats');
 
-var gcstats = new GCStats();
-gcstats.on('stats', function(stats) {
+gcStats.on('stats', function(stats) {
   console.log('GC happened', stats);
 });
 ```

@@ -1,7 +1,6 @@
-var GCStats = require('.');
+var gcStats = require('.');
 
-var gcstats = new GCStats();
-gcstats.on('stats', function(stats) {
+gcStats.on('stats', function(stats) {
   console.log('GC happened', stats);
 });
 
