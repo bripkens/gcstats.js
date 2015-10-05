@@ -1,7 +1,7 @@
 <h1 align="center">gcstats.js</h1>
 <p align="center">Exposes stats about V8 GC after it has been executed.</p>
 
-[![Build Status](https://travis-ci.org/bripkens/node-gcstats.svg?branch=master)](https://travis-ci.org/bripkens/node-gcstats)
+[![Build Status](https://travis-ci.org/bripkens/gcstats.js.svg?branch=master)](https://travis-ci.org/bripkens/gcstats.js)
 
 ## Usage
 
