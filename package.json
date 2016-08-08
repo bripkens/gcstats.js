@@ -12,11 +12,16 @@
   "scripts": {
     "install": "node-gyp rebuild",
     "rebuild": "node-gyp rebuild",
-    "test": "echo Success!"
+    "test": "mocha --expose-gc"
   },
   "dependencies": {
     "bindings": "1.2.1",
     "nan": "^2.4.0"
   },
-  "gypfile": true
+  "gypfile": true,
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.0.2",
+    "semver": "5.3.0"
+  }
 }
