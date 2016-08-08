@@ -15,6 +15,7 @@
     "test": "echo Success!"
   },
   "dependencies": {
+    "bindings": "1.2.1",
     "nan": "^2.4.0"
   },
   "gypfile": true

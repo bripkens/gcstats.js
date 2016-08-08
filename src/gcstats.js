@@ -1,4 +1,4 @@
-var gcStats = require('../build/Release/gcstats');
+var gcStats = require('bindings')('gcstats.node');
 var EventEmitter = require('events').EventEmitter;
 
 var emitter = module.exports = new EventEmitter();
