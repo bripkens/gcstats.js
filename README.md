@@ -9,7 +9,6 @@ Exposes statistics about V8 garbage collections (GCs) after they have been execu
 - [Installation](#installation)
 - [Usage](#usage)
 - [Property insights](#property-insights)
-- [Installation](#installation)
 - [Node version compatibility](#node-version-compatibility)
 - [Credits](#credits)
 
@@ -58,7 +57,7 @@ This will print blobs like this whenever a GC happens:
 }
 ```
 
-## Property insights
+## Property Insights
  * `start`: Start time of the GC measured using [uv_hrtime](http://docs.libuv.org/en/v1.x/misc.html#c.uv_hrtime) (nanoseconds).
  * `end`: End time of the GC measured using [uv_hrtime](http://docs.libuv.org/en/v1.x/misc.html#c.uv_hrtime) (nanoseconds).
  * `totalHeapSize`: Number of bytes V8 has allocated for the heap. This can grow if usedHeap needs more.
@@ -68,14 +67,9 @@ This will print blobs like this whenever a GC happens:
  * `totalPhysicalSize`: Commited size (node 0.11+)
  * `gctype`: What kind of GC was executed. Refer to the v8 docs of the [`GCType`](https://github.com/nodejs/node/blob/eb172feebf994c904c5f940498f491c9bc64e7a8/deps/v8/include/v8.h#L5165-L5172) enum for a list of possible values.
 
-## Installation
 
-```
-npm install --save gcstats.js
-```
-
-## Node version compatibility
-node-gcstats depends on C++ extensions which are compiled when the `gcstats.js` module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/gcstats.js/).
+## Node Vversion Compatibility
+GC stats depend on C++ extensions which are compiled when the `gcstats.js` module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/gcstats.js/).
 
 
 ## Credits
