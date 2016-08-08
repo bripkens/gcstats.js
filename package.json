@@ -15,7 +15,7 @@
     "test": "./test"
   },
   "dependencies": {
-    "nan": "^2.0.5"
+    "nan": "^2.4.0"
   },
   "gypfile": true
 }
