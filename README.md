@@ -1,4 +1,4 @@
-# proxrox &nbsp; [![Build Status](https://travis-ci.org/bripkens/gcstats.js.svg?branch=master)](https://travis-ci.org/bripkens/gcstats.js) [![Dependency Status](https://david-dm.org/bripkens/gcstats.js/master.svg)](https://david-dm.org/bripkens/gcstats.js/master) [![npm version](https://badge.fury.io/js/gcstats.js.svg)](https://badge.fury.io/js/gcstats.js)
+# gcstats.js &nbsp; [![Build Status](https://travis-ci.org/bripkens/gcstats.js.svg?branch=master)](https://travis-ci.org/bripkens/gcstats.js) [![Dependency Status](https://david-dm.org/bripkens/gcstats.js/master.svg)](https://david-dm.org/bripkens/gcstats.js/master) [![npm version](https://badge.fury.io/js/gcstats.js.svg)](https://badge.fury.io/js/gcstats.js)
 
 Exposes statistics about V8 garbage collections (GCs) after they have been executed.
 
