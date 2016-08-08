@@ -11,42 +11,43 @@ Create a new instance of the module and subscribe to `stats`-events from that:
 var gcStats = require('gcstats.js');
 
 gcStats.on('stats', function(stats) {
-  console.log('GC happened', stats);
+  console.log(stats);
 });
 ```
 
 This will print blobs like this whenever a GC happens:
 
-```
-GC happened { start: 635817864674795,
-  end: 635817865774643,
-  gctype: 1,
-  before:
-   { totalHeapSize: 277510912,
-     totalHeapExecutableSize: 5242880,
-     usedHeapSize: 273621856,
-     heapSizeLimit: 1535115264,
-     totalPhysicalSize: 277510912 },
-  after:
-   { totalHeapSize: 277510912,
-     totalHeapExecutableSize: 5242880,
-     usedHeapSize: 273533760,
-     heapSizeLimit: 1535115264,
-     totalPhysicalSize: 277510912 } }
+```json
+{
+  "start": 271925068593439,
+  "end": 271925070343402,
+  "gctype": 1,
+  "before": {
+    "totalHeapSize": 10481664,
+    "totalHeapExecutableSize": 5242880,
+    "usedHeapSize": 5761048,
+    "heapSizeLimit": 1535115264,
+    "totalPhysicalSize": 10481664
+  },
+  "after": {
+    "totalHeapSize": 11530240,
+    "totalHeapExecutableSize": 5242880,
+    "usedHeapSize": 5512464,
+    "heapSizeLimit": 1535115264,
+    "totalPhysicalSize": 11530240
+  }
+}
 ```
 
 ## Property insights
- * totalHeapSize: Number of bytes V8 has allocated for the heap. This can grow if usedHeap needs more.
- * usedHeapSize: Number of bytes in use by application data
- * total HeapExecutableSize: Number of bytes for compiled bytecode and JITed code
- * heapSizeLimit: The absolute limit the heap cannot exceed
- * totalPhysicalSize: Commited size (node 0.11+)
- * pause: Nanoseconds from start to end of GC using hrtime()
-
-gctype can have the following values:
- * 1: Scavenge (minor GC)
- * 2: Mark/Sweep/Compact (major GC)
- * 3: Both 1 and 2
+ * `start`: Start time of the GC measured using [uv_hrtime](http://docs.libuv.org/en/v1.x/misc.html#c.uv_hrtime) (nanoseconds).
+ * `end`: End time of the GC measured using [uv_hrtime](http://docs.libuv.org/en/v1.x/misc.html#c.uv_hrtime) (nanoseconds).
+ * `totalHeapSize`: Number of bytes V8 has allocated for the heap. This can grow if usedHeap needs more.
+ * `usedHeapSize`: Number of bytes in use by application data
+ * `totalHeapExecutableSize`: Number of bytes for compiled bytecode and JITed code
+ * `heapSizeLimit`: The absolute limit the heap cannot exceed
+ * `totalPhysicalSize`: Commited size (node 0.11+)
+ * `gctype`: What kind of GC was executed. Refer to the v8 docs of the [`GCType`](https://github.com/nodejs/node/blob/master/deps/v8/include/v8.h#L5165-L5172) enum for a list of possible values.
 
 ## Installation
 

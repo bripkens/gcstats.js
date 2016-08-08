@@ -1,7 +1,7 @@
 var gcStats = require('.');
 
 gcStats.on('stats', function(stats) {
-  console.log('GC happened', stats);
+  console.log(JSON.stringify(stats, 0, 2));
 });
 
 var t = [];
