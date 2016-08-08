@@ -66,7 +66,7 @@ This will print blobs like this whenever a GC happens:
  * `totalHeapExecutableSize`: Number of bytes for compiled bytecode and JITed code
  * `heapSizeLimit`: The absolute limit the heap cannot exceed
  * `totalPhysicalSize`: Commited size (node 0.11+)
- * `gctype`: What kind of GC was executed. Refer to the v8 docs of the [`GCType`](https://github.com/nodejs/node/blob/master/deps/v8/include/v8.h#L5165-L5172) enum for a list of possible values.
+ * `gctype`: What kind of GC was executed. Refer to the v8 docs of the [`GCType`](https://github.com/nodejs/node/blob/eb172feebf994c904c5f940498f491c9bc64e7a8/deps/v8/include/v8.h#L5165-L5172) enum for a list of possible values.
 
 ## Installation
 
