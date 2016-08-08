@@ -55,7 +55,8 @@ npm install --save gcstats.js
 ```
 
 ## Node version compatibility
-node-gcstats depends on C++ extensions which are compiled when the *gc-stats* module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/node-gcstats/) and the [compatibility file](https://github.com/bripkens/node-gcstats/blob/develop/compatibility.md).
+node-gcstats depends on C++ extensions which are compiled when the *gcstats.js* module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/node-gcstats/).
+
 
 ## Credits
-`node-gcstats` was written by @dainis and later adopted by @bripkens.
+`node-gcstats` was written by @dainis and later adapted by @bripkens and renamed to `gcstats.js`.
