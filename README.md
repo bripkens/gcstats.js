@@ -1,7 +1,19 @@
-<h1 align="center">gcstats.js</h1>
-<p align="center">Exposes stats about V8 GC after it has been executed.</p>
+# proxrox &nbsp; [![Build Status](https://travis-ci.org/bripkens/gcstats.js.svg?branch=master)](https://travis-ci.org/bripkens/gcstats.js) [![Dependency Status](https://david-dm.org/bripkens/gcstats.js/master.svg)](https://david-dm.org/bripkens/gcstats.js/master) [![npm version](https://badge.fury.io/js/gcstats.js.svg)](https://badge.fury.io/js/gcstats.js)
 
-[![Build Status](https://travis-ci.org/bripkens/gcstats.js.svg?branch=master)](https://travis-ci.org/bripkens/gcstats.js)
+Exposes statistics about V8 garbage collections (GCs) after they have been executed.
+
+---
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Usage](#usage)
+- [Property insights](#property-insights)
+- [Installation](#installation)
+- [Node version compatibility](#node-version-compatibility)
+- [Credits](#credits)
+
+<!-- /TOC -->
+
 
 ## Usage
 
