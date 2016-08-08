@@ -6,6 +6,7 @@ Exposes statistics about V8 garbage collections (GCs) after they have been execu
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Installation](#installation)
 - [Usage](#usage)
 - [Property insights](#property-insights)
 - [Installation](#installation)
@@ -15,9 +16,15 @@ Exposes statistics about V8 garbage collections (GCs) after they have been execu
 <!-- /TOC -->
 
 
-## Usage
+## Installation
 
-Create a new instance of the module and subscribe to `stats`-events from that:
+```
+npm install --save gcstats.js
+```
+
+
+## Usage
+Require the module and subscribe to the `stats` event:
 
 ```javascript
 var gcStats = require('gcstats.js');
@@ -68,7 +75,7 @@ npm install --save gcstats.js
 ```
 
 ## Node version compatibility
-node-gcstats depends on C++ extensions which are compiled when the *gcstats.js* module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/gcstats.js/).
+node-gcstats depends on C++ extensions which are compiled when the `gcstats.js` module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/gcstats.js/).
 
 
 ## Credits
