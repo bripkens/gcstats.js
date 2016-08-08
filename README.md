@@ -8,12 +8,11 @@ Exposes statistics about V8 garbage collections (GCs) after they have been execu
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Property insights](#property-insights)
-- [Node version compatibility](#node-version-compatibility)
+- [Property Insights](#property-insights)
+- [Node Version Compatibility](#node-version-compatibility)
 - [Credits](#credits)
 
 <!-- /TOC -->
-
 
 ## Installation
 
@@ -68,7 +67,7 @@ This will print blobs like this whenever a GC happens:
  * `gctype`: What kind of GC was executed. Refer to the v8 docs of the [`GCType`](https://github.com/nodejs/node/blob/eb172feebf994c904c5f940498f491c9bc64e7a8/deps/v8/include/v8.h#L5165-L5172) enum for a list of possible values.
 
 
-## Node Vversion Compatibility
+## Node Version Compatibility
 GC stats depend on C++ extensions which are compiled when the `gcstats.js` module is installed. Compatibility information can be inspected via the [Travis-CI build jobs](https://travis-ci.org/bripkens/gcstats.js/).
 
 
